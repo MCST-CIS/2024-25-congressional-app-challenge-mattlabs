@@ -19,5 +19,3 @@ function signOut() {
 function navigateToAnotherPage() {
     window.location.href = 'tutor.html'; // Change this to your target URL
 }
-
-document.getElementById('google-button').addEventListener('click', navigateToAnotherPage)
