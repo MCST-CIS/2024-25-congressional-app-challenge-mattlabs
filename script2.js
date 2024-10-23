@@ -64,7 +64,6 @@ function changeBoxColor(box, color) {
     }
 }
 
-// Text input handling
 textInput.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         if (event.shiftKey) {
@@ -74,13 +73,22 @@ textInput.addEventListener('keydown', function(event) {
         const userInput = textInput.value.trim();
         if (userInput) {
             // Create a new bubble for the user input
-            const bubble = document.createElement('div');
-            bubble.className = 'bubble';
-            bubble.textContent = userInput;
+            const userBubble = document.createElement('div');
+            userBubble.className = 'user-bubble';
+            userBubble.textContent = userInput;
 
-            // Append the new bubble to the AI section
-            aiSection.appendChild(bubble);
+            // Append the new user bubble to the AI section
+            aiSection.appendChild(userBubble);
             textInput.value = ''; // Clear the input after submitting
+
+            // This is where to put the AI responces Gemini
+            const aiResponse = document.createElement('div');
+            aiResponse.className = 'ai-bubble';
+            aiResponse.textContent = 'Hello ' + userInput; 
+          
+
+            // Append AI response to the AI section
+            aiSection.appendChild(aiResponse);
         }
     }
 });
